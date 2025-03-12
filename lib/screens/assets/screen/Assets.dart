@@ -167,9 +167,6 @@ class _AssetsState extends ConsumerState {
               physics: ClampingScrollPhysics(),
               itemCount: assetGroupList.length,
               itemBuilder: (context, groupIndex) {
-                logger.w( assetGroupList[18]
-                                                .assetGroupCode
-                                                .toString());
                 double isTab() {
                   if (isTablet) {
                     return expandedGroupState[groupIndex] ? 340 : 114;

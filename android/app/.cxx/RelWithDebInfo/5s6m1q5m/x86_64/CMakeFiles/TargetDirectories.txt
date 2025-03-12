@@ -1,0 +1,2 @@
+/Users/iot/Downloads/Flutter Projects/Ausweg Projects/fixitnow-main/android/app/.cxx/RelWithDebInfo/5s6m1q5m/x86_64/CMakeFiles/edit_cache.dir
+/Users/iot/Downloads/Flutter Projects/Ausweg Projects/fixitnow-main/android/app/.cxx/RelWithDebInfo/5s6m1q5m/x86_64/CMakeFiles/rebuild_cache.dir

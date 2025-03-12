@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/iot/Development/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/iot/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/iot/Downloads/Flutter Projects/Ausweg Projects/fixitnow-main/android/app/.cxx/RelWithDebInfo/5s6m1q5m/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/iot/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/iot/Downloads/Flutter Projects/Ausweg Projects/fixitnow-main/android/app/.cxx/RelWithDebInfo/5s6m1q5m/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

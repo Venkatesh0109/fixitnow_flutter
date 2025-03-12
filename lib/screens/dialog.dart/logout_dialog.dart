@@ -1,5 +1,6 @@
 import 'package:auscurator/login_screen.dart';
 import 'package:auscurator/util/shared_util.dart';
+import 'package:auscurator/widgets/loaders.dart';
 import 'package:auscurator/widgets/palette.dart';
 import 'package:auscurator/widgets/space.dart';
 import 'package:auscurator/widgets/text_widget.dart';
@@ -16,6 +17,8 @@ class LogoutDialog extends StatefulWidget {
 final token = SharedUtil().getToken;
 
 class _LogoutDialogState extends State<LogoutDialog> {
+  bool isLoading = false;
+
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
@@ -37,31 +40,42 @@ class _LogoutDialogState extends State<LogoutDialog> {
             },
             child: const Text('Cancel'),
           ),
-          TextButton(
-            onPressed: () {
-              {
-                if (token != "") {
-                  FirebaseMessaging.instance
-                      .unsubscribeFromTopic(token.toString());
-                }
-                ;
-                // Navigator.pushReplacement(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => LoginScreen()))
-                SharedUtil().clearSpecificKeys();
+          isLoading
+              ? Loader()
+              : TextButton(
+                  onPressed: () async {
+                    {
+                      setState(() {
+                        isLoading = true;
+                      });
+                      if (token != "") {
+                        await FirebaseMessaging.instance
+                            .unsubscribeFromTopic(token.toString());
+                      }
+                      ;
+                      await FirebaseMessaging.instance.deleteToken();
 
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginScreen()),
-                  (Route<dynamic> route) => false,
-                );
-                setState(() {});
-              }
-              ;
-            },
-            child: const Text('Logout'),
-          ),
+                      // Navigator.pushReplacement(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => LoginScreen()))
+                      SharedUtil().clearSpecificKeys();
+                      setState(() {
+                        isLoading = false;
+                      });
+
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginScreen()),
+                        (Route<dynamic> route) => false,
+                      );
+                      setState(() {});
+                    }
+                    ;
+                  },
+                  child: const Text('Logout'),
+                ),
         ],
       )
     ]);

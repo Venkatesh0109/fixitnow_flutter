@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../api_service_myconcept/keys.dart';
 
 class SharedUtil {
   static final SharedUtil _instance = SharedUtil._internal();
@@ -45,7 +44,6 @@ class SharedUtil {
     await _prefSingle.remove("employee_name1");
     await _prefSingle.remove("image1");
     // await reloadPref();
-    logger.e("Specific keys cleared");
   }
 
   Future<bool> setJWTToken(String jwtToken) =>

@@ -1,0 +1,28 @@
+{
+  "buildFiles": [
+    "/Users/iot/Development/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/iot/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/iot/Downloads/Flutter Projects/Ausweg Projects/fixitnow-main/android/app/.cxx/Debug/1k4k2f59/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/iot/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/iot/Downloads/Flutter Projects/Ausweg Projects/fixitnow-main/android/app/.cxx/Debug/1k4k2f59/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {},
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/iot/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/iot/Library/Android/sdk/ndk/23.1.7779620/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": []
+}

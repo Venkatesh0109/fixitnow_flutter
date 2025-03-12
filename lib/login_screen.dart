@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:auscurator/api_service_myconcept/keys.dart';
 import 'package:auscurator/bottom_navigation/bottomnavscreen.dart';
 import 'package:auscurator/ip_setting_screen.dart';
 import 'package:auscurator/login_screen/bloc/login_bloc.dart';
@@ -19,7 +20,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -83,7 +83,7 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
   void initState() {
     checkConnection(context);
     // _fetchDepartmentList();
-    initSplash();
+    // initSplash();
     _getAppVersion();
     super.initState();
   }
@@ -107,6 +107,7 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
     if (!kIsWeb) {
       if (Platform.isIOS) {
         await FirebaseMessaging.instance.getAPNSToken().then((value) {
+          logger.i(value);
           BlocProvider.of<LoginBloc>(context).add(
             OnLoginButtonClicked(
               userName: userName.text,

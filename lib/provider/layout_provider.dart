@@ -9,9 +9,9 @@ class LayoutProvider extends ChangeNotifier {
     notifyListeners();
   }
 
- LoginModel? _loginData;
-  LoginModel? get loginData => _loginData;
-  set loginData(LoginModel? val) {
+  LoginModel _loginData = LoginModel();
+  LoginModel get loginData => _loginData;
+  set loginData(LoginModel val) {
     _loginData = val;
     notifyListeners();
   }
